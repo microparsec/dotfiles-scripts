@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# Script that turns of the external monitor on HDMI1
+
+
+if [ $1 ]; then
+	if [ $1 = "on" ]; then
+		xrandr --output HDMI1 --right-of eDP1 --auto
+	fi
+	if [ $1 = "off" ]; then
+		xrandr --output HDMI1 --off
+	fi
+else 
+	echo "No valid parameter given. Usage: extdisplay [on|off]"
+fi
